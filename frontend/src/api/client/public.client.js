@@ -1,7 +1,7 @@
 import axios from "axios";
 import queryString from "query-string";
 
-const baseURL = "http://localhost:2500/";
+const baseURL = "https://nextfinal.onrender.com";
 
 const publicClient = axios.create({
   baseURL,
