@@ -48,6 +48,7 @@ const Footer = () => {
               textDecoration: 'none',
               color: theme.palette.primary.main
             }}
+            href='https://github.com'
           >
             Saransh Chaudhary
           </a>
