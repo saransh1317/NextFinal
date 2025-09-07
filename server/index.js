@@ -13,7 +13,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use("/", router);
-
+app.get("/",(req,res)=>{
+  res.send("Backend is working perfectly")
+})
 mongoose.connect(process.env.MONGODB_URL).then(() => {
   console.log("Mongodb connected");
 }).catch((err) => {
