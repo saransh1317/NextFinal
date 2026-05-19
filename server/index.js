@@ -4,6 +4,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import "dotenv/config";
 import router from "./src/routes/index.js";
+import * as dns from "node:dns";
 
 const app = express();
 
@@ -16,6 +17,8 @@ app.use("/", router);
 app.get("/",(req,res)=>{
   res.send("Backend is working perfectly")
 })
+mongoose.set('strictQuery', true);
+dns.setServers(['8.8.8.8', '1.1.1.1']);
 mongoose.connect(process.env.MONGODB_URL).then(() => {
   console.log("Mongodb connected");
 }).catch((err) => {
